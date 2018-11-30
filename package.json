@@ -1,0 +1,53 @@
+{
+  "name": "check-flow-annotation",
+  "version": "0.0.0",
+  "description": "A basic flow type annotation checker",
+  "keywords": [
+    "flow",
+    "flowtype",
+    "check",
+    "annotation",
+    "annotations"
+  ],
+  "author": "David Babel",
+  "license": "MIT",
+  "thanks": "https://www.paypal.me/devilhunter/4",
+  "engines": {
+    "node": ">= 8"
+  },
+  "main": "src/index.js",
+  "bin": {
+    "check-flow-annotation": "./src/index.js"
+  },
+  "scripts": {
+    "start": "./src/index.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{js}"
+    ],
+    "testURL": "http://localhost/"
+  },
+  "dependencies": {
+    "argv": "^0.0.2",
+    "array-flatten": "^2.1.1",
+    "colors": "^1.3.2",
+    "firstline": "^2.0.2",
+    "recursive-readdir": "^2.2.2"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.15.3",
+    "test-console": "^1.1.0"
+  }
+}

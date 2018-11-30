@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+/* eslint-disable import/no-extraneous-dependencies,no-console */
+&nbsp;
+const readDir = require('recursive-readdir');
+const <span class="cstat-no" title="statement not covered" >firstline = require('firstline');</span>
+const argv = <span class="cstat-no" title="statement not covered" >require('argv');</span>
+const <span class="cstat-no" title="statement not covered" >flatten = require('</span>array-flatten');
+<span class="cstat-no" title="statement not covered" >require('colors');</span>
+&nbsp;
+function exec(inputArgs = argv) {
+  const args = inputArgs
+    .<span class="branch-0 cbranch-no" title="branch not covered" >info(</span>
+      `Usage: check-flow-annotation.js [options] path1 path2
+  by default it checks every ".js" and ".jsx" in your project, but you can filter it with exclude option`
+    )
+    .version('v1.0')
+    .option([
+      {
+        name: 'strict',
+        short: 's',
+        type: 'boolean',
+        description: 'Force to check for "@flow strict"'
+      },
+      {
+        name: 'exclude',
+        short: 'x',
+        type: 'list,csv',
+        description: 'Allow to exclude certain paths or extensions',
+        example: `example: ['build*', '.src/static/*', '*.jsx']
+                will be merged with default: ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx)']`
+      },
+      {
+        name: 'check',
+        short: 'c',
+        type: 'string',
+        description: 'Set a custom check',
+        example: "'@flow weak' or '@no flow'"
+      }
+    ])
+    .run();
+&nbsp;
+<span class="branch-0 cbranch-no" title="branch not covered" >  const {</span>
+    targets: argsTargets,
+    options: { strict = false, check = '@flow', exclude = [] }
+  } = args;
+&nbsp;
+  const annotation = strict ? '@flow strict' : check;
+  const <span class="cstat-no" title="statement not covered" >checkRegexp = new RegExp(annotation);</span>
+  const targets = <span class="cstat-no" title="statement not covered" >argsTargets.length ? a</span>rgsTargets : ['./'];
+  let pathsLeft = <span class="cstat-no" title="statement not covered" >targets.length;</span>
+&nbsp;
+  const promises = [];
+  const <span class="cstat-no" title="statement not covered" >printResult = </span>() =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >    Promise.all(promises)</span></span>
+      .then(results =&gt; {
+<span class="cstat-no" title="statement not covered" >        const flowMissing = <span class="fstat-no" title="function not covered" >results.</span>filter(x =&gt; x);</span>
+<span class="cstat-no" title="statement not covered" >        if (flowMissing.<span class="cstat-no" title="statement not covered" >length === 0) <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span></span>
+<span class="cstat-no" title="statement not covered" >          process.exit(0);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          flowMissing.forEach(fm =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >            console.log(fm);</span></span>
+          });
+          process.exit(1);
+        }<span class="cstat-no" title="statement not covered" ></span>
+        return '';
+      })
+      .catch(e =&gt; {
+<span class="fstat-no" title="function not covered" >        console.e</span>rror(e);
+      });
+  };
+&nbsp;
+  targets.forEach(target =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    readDir(</span></span>
+      target,
+      [
+        'node_modules*',
+        '.git*',
+        'flow-typed*',
+        '.*',
+        '!*.+(js|jsx)',
+        ...flatten(exclude)
+      ],
+      (err, files) =&gt; {
+<span class="cstat-no" title="statement not covered" >        if (err) <span class="fstat-no" title="function not covered" >{</span></span>
+          console.error(err);
+<span class="cstat-no" title="statement not covered" >          process.exit(1);</span>
+        }<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        promises.push(</span>
+          ...files.map(async file =&gt; {
+            const line = await firstline(file);
+            if (!<span class="cstat-no" title="statement not covered" >checkRegexp.test(line)) {</span>
+<span class="cstat-no" title="statement not covered" >              return `${`missing ${annotation} annotation:`.red} ${file}`;</span>
+            }<span class="cstat-no" title="statement not covered" ></span>
+            return null;
+          })
+        );
+&nbsp;
+        pathsLeft--;
+<span class="cstat-no" title="statement not covered" >        if (p</span>athsLeft === 0) {
+<span class="cstat-no" title="statement not covered" >          printResult();</span>
+        }<span class="cstat-no" title="statement not covered" ></span>
+      }
+    );
+  });
+}
+&nbsp;
+if (process.env !== 'test') {
+  exec();
+}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+module.exports = exec;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Nov 30 2018 12:44:39 GMT+0100 (GMT+01:00)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+language: node_js
+sudo: false
+node_js:
+  - 8
+  - 9
+  - 10
+
+script:
+  # - npm run test && codecov
+
+before_deploy:
+  - npm --no-git-tag-version version `git describe --tags` 2>/dev/null || true
+
+deploy:
+  provider: npm
+  skip_cleanup: true
+  email: oopinou@gmail.com
+  api_key:
+    secure:
+      YeT4zZNTpswMu5P8RZGHwfXywdooEf7vXG8SvRpu65BoVBtx+PmhtQIXdzA/lG1P/NTFK+NsugHfdc+lLxkDomJp8P42AUFCCF3otMb62lFJAPsIQrpzIu244G9eVIDfNCBbia+iZwSsBatteuAY9HQyyQXUuEo24l/wXMwJjXobovOGuwDaQNRKOyQjMECX2O0EE57DqqhY5dl3xcgfxkDmez0Ju95kodWAbNabIW36uO8gwl3295jgElCJxzPKC3GXmUPzDY2tC3MCx3+dsJi+Ry1skzPbjYCtk7KtrAElcTl4cRozI13TGJf9ATcq9wTx+8N0j0N4jpkZjVaNtC2Avd7cxt/sHjtDQ02fV+yS9Y3Ovs24uxjd1x2q7L/qaQ3J5aTeFpDj+6wD+f97oE+567yRnCFm6b3/+NtngOfX/xUZIrgpYGf/IKw+zvhYMfRBTKj03efutkjWT5NkAlfjsuPnnNOUajLELsUzAW8FOuOW5dZLEDstcd+wyEd8+h7oy9phnFgmqPxFPiNS7ivj/3MAEQK4SisrMj0ciV4eE2TZrL+zxY6MSwQCI/vbO95/d17ib6PFP3oekxuHRCTopuroIPK0xpxPGLAuAGZy+H4JJCYT2leqGArPOurzM3/0Ue8OGg/KIi9+dm/10VU4uGoi6EN2GkS7SWXufaI=
+  on:
+    tags: true
+    repo: DavidBabel/check-flow-annotation
