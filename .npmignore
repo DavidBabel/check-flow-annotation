@@ -1,4 +1,5 @@
 .vscode/
+coverage/
 test/
 .gitignore
 .travis.yml

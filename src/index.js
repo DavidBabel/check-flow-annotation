@@ -10,7 +10,7 @@ require('colors');
 function exec(inputArgs = argv) {
   const args = inputArgs
     .info(
-      `Usage: check-flow-annotation.js [options] path1 path2
+      `Usage: check-flow-annotation.js [options] path1 path2 path3 etc
   by default it checks every ".js" and ".jsx" in your project, but you can filter it with exclude option`
     )
     .version('v1.0')
