@@ -13,6 +13,21 @@ This is a very simple package to check your flow annotation coverage over your p
 This one is made to be included in your CI to prevent to forget some type annotations. It's very fast, and allow some customisations.
 
 ```bash
+# install
+yarn add check-flow-annotation -D
+npm install check-flow-annotation --save-dev
+
+# usages in your CI config
+check-flow-annotation ./my/path ./my/other/path
+check-flow-annotation ./my/path --strict
+check-flow-annotation ./my/path --exclude ['build*', '.src/static/*']
+check-flow-annotation ./my/path --check '@flow weak'
+```
+
+```bash
+# help
+check-flow-annotation -h
+
 Usage: check-flow-annotation.js [options] path1 path2 path3 etc
   by default it checks every ".js" and ".jsx" in your project, but you can filter it with exclude option
 
