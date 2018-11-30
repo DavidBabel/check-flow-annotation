@@ -16,6 +16,10 @@
     "node": ">= 8"
   },
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidBabel/check-flow-annotation"
+  },
   "bin": {
     "check-flow-annotation": "./src/index.js"
   },
