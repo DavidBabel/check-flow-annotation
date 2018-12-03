@@ -49,25 +49,26 @@ Usage: check-flow-annotation.js [options] path1 path2 path3 etc
   Note that options are written "--option=value"
   but short versions are written "-o value"
 
-	--help, -h
-		Displays help information about this script
-		'index.js -h' or 'index.js --help'
+  --help, -h
+    Displays help information about this script
+    'index.js -h' or 'index.js --help'
 
-	--version
-		Displays version info
-		index.js --version
+  --version
+    Displays version info
+    index.js --version
 
-	--strict, -s
-		Force to check "@flow strict"
+  --strict, -s
+    Force to check "@flow strict"
 
-	--exclude, -x
-		Allow to exclude certain paths or extensions, it‘s a comma separated value
-		example: 'build*','.src/static/*'
-                will be merged with default array:
-                ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx|mjs)']
+  --exclude, -x
+    Allow to exclude certain paths or extensions,
+                  it‘s a comma separated value
+    example: 'build*','.src/static/*'
+                  will be merged with default array:
+                  ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx|mjs)']
 
-	--check, -c
-		Set a custom check
-		'@flow weak' or '@no flow'
+  --check, -c
+    Set a custom check
+    '@flow weak' or '@no flow'
 
 ```

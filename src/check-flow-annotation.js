@@ -10,7 +10,7 @@ require('colors');
 function exec(inputArgs = argv) {
   const args = inputArgs
     .info(
-      `Usage: check-flow-annotation.js [options] path1 path2 path3 etc
+      `Usage: check-flow-annotation [options] path1 path2 path3 etc
 
   By default it checks every ".js", ".jsx" and ".mjs" in your project,
   but you can filter it with exclude option
@@ -30,11 +30,11 @@ function exec(inputArgs = argv) {
         name: 'exclude',
         short: 'x',
         type: 'list,csv',
-        description:
-          'Allow to exclude certain paths or extensions, it‘s a comma separated value',
+        description: `Allow to exclude certain paths or extensions,
+                  it‘s a comma separated value`,
         example: `example: 'build*','.src/static/*'
-                will be merged with default array:
-                ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx|mjs)']`
+                  will be merged with default array:
+                  ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx|mjs)']`
       },
       {
         name: 'check',
