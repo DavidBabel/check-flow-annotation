@@ -12,9 +12,11 @@ function exec(inputArgs = argv) {
     .info(
       `Usage: check-flow-annotation.js [options] path1 path2 path3 etc
 
-  By default it checks every ".js" and ".jsx" in your project, but you can filter it with exclude option
+  By default it checks every ".js", ".jsx" and ".mjs" in your project,
+  but you can filter it with exclude option
 
-  Note that options are written "--option=value" but short versions are written "-o value"`
+  Note that options are written "--option=value"
+  but short versions are written "-o value"`
     )
     .version('v1.0')
     .option([
@@ -22,7 +24,7 @@ function exec(inputArgs = argv) {
         name: 'strict',
         short: 's',
         type: 'boolean',
-        description: 'Force to check for "@flow strict"'
+        description: 'Force to check "@flow strict"'
       },
       {
         name: 'exclude',
@@ -31,7 +33,8 @@ function exec(inputArgs = argv) {
         description:
           'Allow to exclude certain paths or extensions, it‘s a comma separated value',
         example: `example: 'build*','.src/static/*'
-                will be merged with default array: ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx|mjs)']`
+                will be merged with default array:
+                ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx|mjs)']`
       },
       {
         name: 'check',
