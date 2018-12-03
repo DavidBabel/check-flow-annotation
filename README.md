@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/DavidBabel/check-flow-annotation.svg?branch=master)](https://travis-ci.org/DavidBabel/check-flow-annotation)
-[![codecov](https://codecov.io/gh/DavidBabel/check-flow-annotation/branch/master/graph/badge.svg)](https://codecov.io/gh/DavidBabel/check-flow-annotation)
 
+<!-- [![codecov](https://codecov.io/gh/DavidBabel/check-flow-annotation/branch/master/graph/badge.svg)](https://codecov.io/gh/DavidBabel/check-flow-annotation) -->
 
 [![npm](http://img.shields.io/npm/v/check-flow-annotation.svg)](https://www.npmjs.com/package/check-flow-annotation)
 [![License](https://img.shields.io/npm/l/check-flow-annotation.svg)](LICENSE)
@@ -13,15 +13,28 @@ This is a very simple package to check your flow annotation coverage over your p
 This one is made to be included in your CI to prevent to forget some type annotations. It's very fast, and allow some customisations.
 
 ```bash
-# install
+# install with yarn
 yarn add check-flow-annotation -D
+# install with npm
 npm install check-flow-annotation --save-dev
 
 # usages in your CI config
 check-flow-annotation ./my/path ./my/other/path
+
+# with options
 check-flow-annotation ./my/path --strict
-check-flow-annotation ./my/path --exclude ['build*', '.src/static/*']
-check-flow-annotation ./my/path --check '@flow weak'
+check-flow-annotation --strict ./my/path # same
+
+# exclude some paths
+check-flow-annotation ./my/path --exclude='build*','.src/static/*'
+check-flow-annotation ./my/path -x 'build*','.src/static/*' #same, small version
+check-flow-annotation ./my/path -x 'build*' -x '.src/static/*' #same
+
+# exclude jsx files
+check-flow-annotation ./my/path --exclude='*.jsx'
+
+# check another anotation on first line
+check-flow-annotation ./my/path --check='@flow weak'
 ```
 
 ```bash
@@ -29,7 +42,10 @@ check-flow-annotation ./my/path --check '@flow weak'
 check-flow-annotation -h
 
 Usage: check-flow-annotation.js [options] path1 path2 path3 etc
-  by default it checks every ".js" and ".jsx" in your project, but you can filter it with exclude option
+
+  By default it checks every ".js" and ".jsx" in your project, but you can filter it with exclude option
+
+  Note that options are written "--option=value" but short version are written "-o value"
 
   --help, -h
     Displays help information about this script
@@ -43,13 +59,11 @@ Usage: check-flow-annotation.js [options] path1 path2 path3 etc
     Force to check for "@flow strict"
 
   --exclude, -x
-    Allow to exclude certain paths or extensions
-    example: ['build*', '.src/static/*', '*.jsx']
-                will be merged with default: ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx)']
+    Allow to exclude certain paths or extensions, it‘s a comma separated value
+    example: 'build*','.src/static/*'
+                will be merged with default array: ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx|mjs)']
 
   --check, -c
     Set a custom check
     '@flow weak' or '@no flow'
-
 ```
-

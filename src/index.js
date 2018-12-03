@@ -11,7 +11,10 @@ function exec(inputArgs = argv) {
   const args = inputArgs
     .info(
       `Usage: check-flow-annotation.js [options] path1 path2 path3 etc
-  by default it checks every ".js" and ".jsx" in your project, but you can filter it with exclude option`
+
+  By default it checks every ".js" and ".jsx" in your project, but you can filter it with exclude option
+
+  Note that options are written "--option=value" but short versions are written "-o value"`
     )
     .version('v1.0')
     .option([
@@ -25,9 +28,10 @@ function exec(inputArgs = argv) {
         name: 'exclude',
         short: 'x',
         type: 'list,csv',
-        description: 'Allow to exclude certain paths or extensions',
-        example: `example: ['build*', '.src/static/*', '*.jsx']
-                will be merged with default: ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx)']`
+        description:
+          'Allow to exclude certain paths or extensions, it‘s a comma separated value',
+        example: `example: 'build*','.src/static/*'
+                will be merged with default array: ['node_modules*', '.git*', 'flow-typed*', '.*', '!*.+(js|jsx|mjs)']`
       },
       {
         name: 'check',
@@ -69,39 +73,37 @@ function exec(inputArgs = argv) {
       });
   };
 
+  const excludeDirs = [
+    'node_modules*',
+    '.git*',
+    'flow-typed*',
+    '.*',
+    '!*.+(js|jsx|mjs)',
+    ...flatten(exclude)
+  ];
+
   targets.forEach(target => {
-    readDir(
-      target,
-      [
-        'node_modules*',
-        '.git*',
-        'flow-typed*',
-        '.*',
-        '!*.+(js|jsx)',
-        ...flatten(exclude)
-      ],
-      (err, files) => {
-        if (err) {
-          console.error(err);
-          process.exit(1);
-        }
-
-        promises.push(
-          ...files.map(async file => {
-            const line = await firstline(file);
-            if (!checkRegexp.test(line)) {
-              return `${`missing ${annotation} annotation:`.red} ${file}`;
-            }
-            return null;
-          })
-        );
-
-        pathsLeft--;
-        if (pathsLeft === 0) {
-          printResult();
-        }
+    readDir(target, excludeDirs, (err, files) => {
+      if (err) {
+        console.error(err);
+        process.exit(1);
       }
-    );
+
+      promises.push(
+        ...files.map(async file => {
+          const line = await firstline(file);
+          if (!checkRegexp.test(line)) {
+            return `${`missing ${annotation} annotation:`.red} ${file}`;
+          }
+          return null;
+        })
+      );
+
+      pathsLeft--;
+      if (pathsLeft === 0) {
+        printResult();
+      }
+    });
   });
 }
 
