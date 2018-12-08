@@ -8,9 +8,11 @@
 
 # check-flow-annotation
 
-This is a very simple package to check your flow annotation coverage over your project.
+This is a very fast and simple package to check your flow annotation coverage over your project.
 
-This one is made to be included in your CI to prevent to forget some type annotations. It's very fast, and allow some customisations.
+It basically test if your files all starts with a `// @flow` or `// @flow strict`.
+
+It's made to be included in your CI to prevent to forget some type annotations. It's very fast, and allow some customisations.
 
 ```bash
 # install with yarn
